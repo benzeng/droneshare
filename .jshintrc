@@ -15,7 +15,7 @@
     "trailing": false,
     "smarttabs": true,
     "globals": {
-        "Frontend": true,
+        "Droneshare": true,
         "jQuery": true,
         "Ember": true,
         "Handlebars": true,

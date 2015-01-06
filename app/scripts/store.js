@@ -1,1 +1,1 @@
-Frontend.ApplicationAdapter = DS.FixtureAdapter;
+Droneshare.ApplicationAdapter = DS.FixtureAdapter;

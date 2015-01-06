@@ -1,4 +1,4 @@
-var Frontend = window.Frontend = Ember.Application.create();
+var Droneshare = window.Droneshare = Ember.Application.create();
 
 /* Order and include as you please. */
 require('scripts/controllers/*');

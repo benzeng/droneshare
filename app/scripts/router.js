@@ -1,3 +1,3 @@
-Frontend.Router.map(function () {
+Droneshare.Router.map(function () {
   // Add your routes here
 });
