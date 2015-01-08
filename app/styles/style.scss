@@ -1,7 +1,81 @@
 $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "compass/css3";
 
-/* Put your CSS here */
+// Colors
+$white: #fff;
+$anchor-green: #74d800;
+
+// Fonts
+$copenhagen-regular: "copenhagen-regular", Helvetica, sans-serif;
+$copenhagen-bold: "copenhagen-bold", Helvetica, sans-serif;
+$copenhagen-light: "copenhagen-light", Helvetica, sans-serif;
+
+@include font-face("copenhagen-regular", font-files(
+  'copenhagen_regular-webfont.eot',
+  'copenhagen_regular-webfont.woff2',
+  'copenhagen_regular-webfont.woff',
+  'copenhagen_regular-webfont.ttf',
+  'copenhagen_regular-webfont.svg#copenhagenregular'
+));
+
+@include font-face("copenhagen-bold", font-files(
+  'copenhagen_bold-webfont.eot',
+  'copenhagen_bold-webfont.woff2',
+  'copenhagen_bold-webfont.woff',
+  'copenhagen_bold-webfont.ttf',
+  'copenhagen_bold-webfont.svg#copenhagenbold'
+), 'bold');
+
+@include font-face("copenhagen-light", font-files(
+  'copenhagen_light-webfont.eot',
+  'copenhagen_light-webfont.woff2',
+  'copenhagen_light-webfont.woff',
+  'copenhagen_light-webfont.ttf',
+  'copenhagen_light-webfont.svg#copenhagenlight'
+), 'lighter');
+
+// Globals
 html, body {
     margin: 30px 0;
 }
+
+// Layout
+#topnav {
+  color: $white;
+  font-family: $copenhagen-light;
+  background-color: rgba(0, 0, 0, .5);
+  a {
+    color: $white;
+    &:hover {
+      color: $anchor-green;
+    }
+    .active {
+      color: $anchor-green;
+    }
+  }
+  .navbar-nav {
+    text-transform: uppercase;
+    li {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+  .navbar-ex1-collapse {
+    width: 350px;
+    margin: 0 auto;
+    .navbar-center {
+      float: none;
+      margin: 0 auto;
+      display: table;
+    }
+    .navbar-right-absolute {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+// Page Specific
