@@ -2,9 +2,9 @@ Droneshare.DsMapComponent = Ember.Component.extend({
   tagName: 'div',
   attributeBindings: ['customId:id'],
   customId: 'map-component',
+  initialSource: [],
 
   didInsertElement: function() {
-    //debugger;
     var resizeMapHandler = function() {
       $('#map-component').css({
         height: parseInt(window.innerHeight, 10) + "px"
