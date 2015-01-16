@@ -3,6 +3,13 @@ Droneshare.IndexSerializer = DS.JSONSerializer.extend({
     arrayPayload = arrayPayload.updates.map(function(item) {
       return item.payload;
     });
+    arrayPayload = arrayPayload.filter(function(item) {
+      // reject invalid missions
+      if (!item.latitude) {
+        return false;
+      }
+      return true;
+    });
     return this._super(store, type, arrayPayload, id, requestType)
   }
 });
