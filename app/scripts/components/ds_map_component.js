@@ -1,9 +1,8 @@
 Droneshare.DsMapComponent = Ember.Component.extend({
-  tagName: 'div',
-  attributeBindings: ['customId:id'],
   customId: 'map-component',
   initialSource: [],
   markers: [],
+  missions: [],
   map: {},
 
   didInsertElement: function() {
@@ -13,7 +12,7 @@ Droneshare.DsMapComponent = Ember.Component.extend({
     });
     self.resizeMapHandler();
     L.mapbox.accessToken = 'pk.eyJ1Ijoia2V2aW4zZHIiLCJhIjoiS1ROb2prbyJ9._ogWCCC5oVi9wqlJNduQQw';
-    self.map = L.mapbox.map('map-component', 'kevin3dr.hokdl9ko', {
+    self.map = L.mapbox.map(self.get('customId'), 'kevin3dr.hokdl9ko', {
       trackResize: true,
       center: [0, 0],
       layers: [
@@ -22,6 +21,7 @@ Droneshare.DsMapComponent = Ember.Component.extend({
       ]
     }).setView([0, 0], 2);
     self.get('initialSource').forEach(function(item) {
+      self.missions.push(item);
       self.markers.push(self.createMarker(item));
     });
   },
