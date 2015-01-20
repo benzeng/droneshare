@@ -1,0 +1,38 @@
+<div class="map-search search-list">
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" name="search" value="" />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </span>
+    </div>
+    <div class="advanced-search">
+      <span>Advanced Search</span>
+      <div class="pull-right">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </div>
+    </div>
+  </form>
+  <ul class="results-list list-group">
+    {{#each mission in firstMissions}}
+      <li class="mission-item list-group-item">
+        <div class="pull-left thumbnail">
+          map
+        </div>
+        <div class="pull-right summary">
+          <h4 class="title">3DR IRIS+</h4>
+          <p class="timestamp">24 min on Oct 1st, 30 minutes ago</p>
+          <p class="user-location">mrpollo in Pittsburg, CA</p>
+        </div>
+        <div class="goto">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </div>
+      </li>
+    {{/each}}
+    <li class="more-results list-group-item">
+      <a href="#">more results</a>
+    </li>
+  </ul>
+</div>

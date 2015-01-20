@@ -88,4 +88,90 @@ html, body {
   }
 }
 
+.map-search {
+  background-color: transparent;
+  width: 400px;
+  height: 440px;
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  font-size: 16px;
+  color: #808080;
+  .form-inline {
+    input.form-control {
+      height: 50px;
+      border: none;
+      border-radius: 0;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100px;
+      height: 50px;
+      background-color: #74d800;
+      color: #fff;
+      font-size: 25px;
+      border: none;
+      border-radius: 0;
+      margin-left: 0;
+    }
+    .advanced-search {
+      background-color: #ccc;
+      padding: 15px;
+    }
+  }
+  .results-list {
+    .mission-item {
+      @include clearfix();
+      height: 100px;
+      padding-right: 45px;
+      cursor: pointer;
+
+      .thumbnail {
+      }
+      .summary {
+        font-size: 12px;
+        p {
+          margin: 0;
+          padding: 0;
+        }
+        .title {
+          color: #333;
+          margin: 0 0 12px 0;
+        }
+        .timestamp {
+        }
+        .user-location {
+        }
+      }
+      .goto {
+        position: absolute;
+        width: 15px;
+        right: 15px;
+        height: 78px;
+        span {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      &:hover {
+        background-color: #282828;
+        color: #fff;
+        .title {
+          color: #fff;
+        }
+      }
+    }
+    .more-results {
+      text-align: center;
+      background-color: rgba(0, 0, 0, .5);
+      border: none;
+      a {
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+  }
+}
+
 // Page Specific

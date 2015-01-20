@@ -1,2 +1,2 @@
-Droneshare.IndexController = Ember.ObjectController.extend({
+Droneshare.IndexController = Ember.ArrayController.extend({
 });

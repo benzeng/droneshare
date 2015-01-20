@@ -1,6 +1,5 @@
 Droneshare.DsMapComponent = Ember.Component.extend({
   customId: 'map-component',
-  initialSource: [],
   markers: [],
   missions: [],
   map: {},
@@ -20,8 +19,7 @@ Droneshare.DsMapComponent = Ember.Component.extend({
         self.createLayer("mslee.h1kk2o6r", "Restricted Zones", '<a href="http://openstreetmap.org">NPS</a>, <a href="https://explore.data.gov/National-Security-and-Veterans-Affairs/Military-Installations-Ranges-and-Training-Areas/wcc7-57p3">US Military Data</a>')
       ]
     }).setView([0, 0], 2);
-    self.get('initialSource').forEach(function(item) {
-      self.missions.push(item);
+    self.get('missions').forEach(function(item) {
       self.markers.push(self.createMarker(item));
     });
   },
