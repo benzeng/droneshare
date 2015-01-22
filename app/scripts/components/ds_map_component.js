@@ -10,14 +10,15 @@ Droneshare.DsMapComponent = Ember.Component.extend({
       self.resizeMapHandler();
     });
     self.resizeMapHandler();
-    L.mapbox.accessToken = 'pk.eyJ1Ijoia2V2aW4zZHIiLCJhIjoiS1ROb2prbyJ9._ogWCCC5oVi9wqlJNduQQw';
-    self.map = L.mapbox.map(self.get('customId'), 'kevin3dr.hokdl9ko', {
+    L.mapbox.accessToken = Droneshare.config.mapbox.accessToken;
+    self.map = L.mapbox.map(self.get('customId'), Droneshare.config.mapbox.defaultLayer.map, {
       trackResize: true,
       center: [0, 0],
-      layers: [
-        self.createLayer("kevin3dr.io0162i9", "Satellite", false),
-        self.createLayer("mslee.h1kk2o6r", "Restricted Zones", '<a href="http://openstreetmap.org">NPS</a>, <a href="https://explore.data.gov/National-Security-and-Veterans-Affairs/Military-Installations-Ranges-and-Training-Areas/wcc7-57p3">US Military Data</a>')
-      ]
+      layers: (function(self, layers){
+        return layers.map(function(layer) {
+          return self.createLayer(layer.map, layer.name, (layer.attribution ? layer.attribution : false))
+        });
+      }(self, Droneshare.config.mapbox.layers))
     }).setView([0, 0], 2);
     self.get('missions').forEach(function(item) {
       self.markers.push(self.createMarker(item));
