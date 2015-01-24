@@ -24,6 +24,7 @@ Droneshare.DsMapComponent = Ember.Component.extend({
       self.markers.push(self.createMarker(item));
     });
   },
+
   createLayer: function(key, attribution) {
     if (attribution == false) {
       attribution = '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>';
@@ -33,11 +34,13 @@ Droneshare.DsMapComponent = Ember.Component.extend({
       detectRetina: true
     });
   },
+
   resizeMapHandler: function() {
     $('#map-component').css({
       height: parseInt(window.innerHeight, 10) + "px"
     });
   },
+
   createMarker: function(data) {
     var markerPopup = "<div class='clearfix map-info-popup'><a href='/user/" + data.get('userName') + "'>" + data.get('userName') + "</a><br><a href='/mission/" + data.get('id') + "'>" + data.get('summaryText') + "</a><br></div>";
     var coordinates = L.latLng(data.get('latitude'), data.get('longitude'));
@@ -55,6 +58,7 @@ Droneshare.DsMapComponent = Ember.Component.extend({
     };
     return L.marker(coordinates, options).bindPopup(markerPopup).addTo(this.map);
   },
+
   getAvatarUrl: function(data) {
     if (data.isLive === true) {
       return '/images/marker-active';
