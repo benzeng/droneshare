@@ -1,5 +1,12 @@
 var Droneshare = window.Droneshare = Ember.Application.create();
 Droneshare.config = {
+  api: {
+    namespace: 'api/v1',
+    host: 'http://api.droneshare.com',
+    headers: {
+      "Authorization": 'DroneApi apikey="a8948c11.9e44351f6c0aa7e3e2ff6d00b14a71c5"'
+    }
+  },
   mapbox: {
     accessToken: 'pk.eyJ1Ijoia2V2aW4zZHIiLCJhIjoiS1ROb2prbyJ9._ogWCCC5oVi9wqlJNduQQw',
     defaultLayer: {
