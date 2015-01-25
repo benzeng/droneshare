@@ -18,13 +18,13 @@
   <ul class="results-list list-group">
     {{#each mission in firstMissions}}
       <li class="mission-item list-group-item">
-        <div class="pull-left thumbnail">
-          map
+        <div class="pull-left mission-thumbnail">
+          <img width="128" height="80" {{bind-attr src="mission.mapThumbnailURL" }} />
         </div>
         <div class="pull-right summary">
-          <h4 class="title">3DR IRIS+</h4>
-          <p class="timestamp">24 min on Oct 1st, 30 minutes ago</p>
-          <p class="user-location">mrpollo in Pittsburg, CA</p>
+          <h4 class="title">{{mission.vehicleText}}</h4>
+          <p class="timestamp">{{mission.flightDuration}} on {{mission.createdOn}}</p>
+          <p class="user-location">{{mission.userName}} in {{mission.summaryText}}</p>
         </div>
         <div class="goto">
           <span class="glyphicon glyphicon-chevron-right"></span>

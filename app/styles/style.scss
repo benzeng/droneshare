@@ -127,10 +127,15 @@ html, body {
       padding-right: 45px;
       cursor: pointer;
 
-      .thumbnail {
+      .mission-thumbnail {
+        width: 128px;
+        height: 80px;
       }
       .summary {
+        width: 200px;
+        height: 80px;
         font-size: 12px;
+        overflow: hidden;
         p {
           margin: 0;
           padding: 0;
