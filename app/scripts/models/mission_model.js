@@ -12,6 +12,12 @@ Droneshare.MissionSerializer = DS.JSONSerializer.extend({
       }
       return true;
     });
+
+    return this._super(store, type, arrayPayload, id, requestType)
+  },
+  extractSingle: function(store, type, payload, id, requestType) {
+    payload.vehicle = payload.vehicleId;
+    delete payload.vehicleId;
     return this._super(store, type, arrayPayload, id, requestType)
   }
 });
@@ -37,7 +43,8 @@ Droneshare.MissionAdapter = DS.RESTAdapter.extend({
 Droneshare.Mission = DS.Model.extend({
   isLive: DS.attr('boolean', {defaultValue: false}),
   viewPrivacy: DS.attr(),
-  vehicleId: DS.attr('number'),
+  //vehicleId: DS.attr('number'),
+  vehicle: DS.belongsTo('vehicle'),
   maxAlt: DS.attr('number'),
   maxGroundspeed: DS.attr('number'),
   maxAirspeed: DS.attr('number'),
@@ -55,5 +62,7 @@ Droneshare.Mission = DS.Model.extend({
   vehicleText: DS.attr(),
   userName: DS.attr(),
   numParameters: DS.attr('number'),
-  vehicleType: DS.attr()
+  vehicleType: DS.attr(),
+  notes: DS.attr(),
+  userAvatarImage: DS.attr()
 });
