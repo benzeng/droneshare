@@ -18,7 +18,7 @@ Droneshare.MissionSerializer = DS.JSONSerializer.extend({
   extractSingle: function(store, type, payload, id, requestType) {
     payload.vehicle = payload.vehicleId;
     delete payload.vehicleId;
-    return this._super(store, type, arrayPayload, id, requestType)
+    return this._super(store, type, arrayPayload, id, requestType);
   }
 });
 

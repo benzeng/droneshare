@@ -3,8 +3,8 @@ Droneshare.VehicleSerializer = DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin,
     missions: { embedded: 'always' }
   },
   extractSingle: function(store, type, payload, id, requestType) {
-    payload.user = payload.userId;
-    delete payload.userId;
+    //payload.user = payload.userName;
+    delete payload.userName;
     return this._super(store, type, payload, id, requestType);
   }
 });
