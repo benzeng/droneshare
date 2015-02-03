@@ -1,2 +1,1 @@
-Droneshare.ApplicationRoute = Ember.Route.extend({
-});
+Droneshare.ApplicationRoute = Ember.Route.extend(SimpleAuth.ApplicationRouteMixin);

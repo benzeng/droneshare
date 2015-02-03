@@ -27,6 +27,12 @@ Droneshare.config = {
   }
 };
 
+window.ENV = window.ENV || [];
+window.ENV['simple-auth'] = {
+  store: 'simple-auth-session-store:local-storage'
+  //authorizer: 'simple-auth-authorizer:oauth2-bearer'
+}
+
 /* Order and include as you please. */
 require('scripts/controllers/*');
 require('scripts/store');
