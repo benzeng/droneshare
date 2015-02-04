@@ -8,7 +8,8 @@
     "bootstrap-sass-official": "3.1.1",
     "mapbox.js": "~2.1.3",
     "ember-simple-auth": "~0.7.2",
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "hull-js-bower": "~0.8.39"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.2.1"

@@ -17,7 +17,19 @@ Ember.Application.initializer({
     var session = container.lookup('session:hull');
 
     session.on('sessionAuthenticationSucceeded', function() {
+      //Hull.init({
+        //appId: Droneshare.config.hull.appId,
+        //orgUrl: Droneshare.config.hull.orgUrl,
+        //accesToken: this.content.hullId
+      //}, function(hull, me, app, org){
+        //Hull.readyToGo = true;
+      //}, function(error){
+        //Hull.readyToGo = false;
+      //});
       Ember.Logger.debug('Session authentication succesful!');
+    });
+    session.on('sessionDataUpdated', function() {
+      Ember.Logger.debug('Session restore/update succesful!');
     });
     session.on('sessionAuthenticationFailed', function() {
       Ember.Logger.debug('Session authentication failed!');
