@@ -13,15 +13,23 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-center">
-        <li><a href="/">Explore</a></li>
+        <li>
+          {{#link-to 'index'}}
+            Explore
+          {{/link-to}}
+        </li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/upload">Upload</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right-absolute">
         <li>
-        <a href="/dashboard">
-          RAMON
-        </a>
+          {{#if session.isAuthenticated}}
+            <a {{ action 'invalidateSession' }}>Logout</a>
+          {{else}}
+            {{#link-to 'login'}}
+              Login
+            {{/link-to}}
+          {{/if}}
         </li>
       </ul>
     </div>

@@ -1,4 +1,4 @@
-Droneshare.IndexRoute = Ember.Route.extend({
+Droneshare.IndexRoute = Ember.Route.extend(SimpleAuth.ApplicationRouteMixin, {
   model: function() {
     return new Ember.RSVP.Promise(function(resolve) {
       var apiConfig = Droneshare.config.api;

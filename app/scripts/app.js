@@ -4,7 +4,7 @@ Droneshare.config = {
     namespace: 'api/v1',
     host: 'http://api.droneshare.com',
     headers: {
-      "Authorization": 'DroneApi apikey="a8948c11.9e44351f6c0aa7e3e2ff6d00b14a71c5"'
+      "Authorization": 'DroneApi apikey="eb34bd67.megadroneshare"'
     }
   },
   mapbox: {
@@ -27,8 +27,16 @@ Droneshare.config = {
   }
 };
 
+/* Auth needs to be included first */
+require('scripts/authenticators/*');
+require('scripts/sessions/*');
+
+/* initializers */
+require('scripts/initializers/*');
+
 window.ENV = window.ENV || [];
 window.ENV['simple-auth'] = {
+  session: 'session:hull',
   store: 'simple-auth-session-store:local-storage'
   //authorizer: 'simple-auth-authorizer:oauth2-bearer'
 }
